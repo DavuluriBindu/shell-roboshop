@@ -29,7 +29,7 @@ do
         ,"Type"             : "A"
         ,"TTL"              : 1
         ,"ResourceRecords"  : [{
-          "Value"         : "'$Ip'"
+            "Value"         : "'$Ip'"
         }]
     }
     }]
