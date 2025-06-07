@@ -28,20 +28,20 @@ VALIDATE(){
     fi
 }
 
-cp mongo.repo /etc/yum.repos.d/mongodb.repo
-VALIDATE $? " copying the mongo file " &>>$log_file
+cp mongo.repo /etc/yum.repos.d/mongodb.repo &>>$log_file
+VALIDATE $? " copying the mongo file " 
 
-dnf install mongodb-org -y 
-VALIDATE $? "intalling mongodb server" &>>$log_file
+dnf install mongodb-org -y &>>$log_file
+VALIDATE $? "intalling mongodb server" 
 
-systemctl enable mongod
-VALIDATE $? "enabling mongodb server" &>>$log_file
+systemctl enable mongod &>>$log_file
+VALIDATE $? "enabling mongodb server" 
   
-systemctl start mongod 
-VALIDATE $? "starting the mongodb server" &>>$log_file
+systemctl start mongod &>>$log_file
+VALIDATE $? "starting the mongodb server" 
 
-sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mongod.conf
-VALIDATE $?  " replacing the port " &>>$log_file
+sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mongod.conf &>>$log_file
+VALIDATE $?  " replacing the port "
 
-systemctl restart mongod
-VALIDATE $? "restarted the mongodb server" &>>$log_file
+systemctl restart mongod &>>$log_file
+VALIDATE $? "restarted the mongodb server" 
