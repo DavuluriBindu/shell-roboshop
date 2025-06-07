@@ -74,7 +74,7 @@ VALIDATE $? "coping mongo repo file"
 
 dnf install mongodb-mongosh -y &>>$log_file
 
-Status=$(mongosh --host mongodb.devops84s.site --eval db.getMongo().getDBNames().indexOf("catalogue");)
+Status=$(mongosh --host mongodb.devops84s.site --eval db.getMongo().getDBNames().indexOf("catalogue"))
 if [ $Status -lt 0 ]
 then
    mongosh --host mongodb.devops84s.site </app/db/master-data.js &>>$log_file
