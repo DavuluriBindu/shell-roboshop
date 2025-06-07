@@ -40,7 +40,7 @@ VALIDATE $? "enabling mongodb server"
 systemctl start mongod &>>$log_file
 VALIDATE $? "starting the mongodb server" 
 
-sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mongod.conf &>>$log_file
+sed -i "s/127.0.0.1/0.0.0.0/g" /etc/mongod.conf 
 VALIDATE $?  " replacing the port "
 
 systemctl restart mongod &>>$log_file
