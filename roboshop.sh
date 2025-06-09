@@ -32,7 +32,7 @@ do
         ,"ResourceRecords"  :cd  [{
             "Value"         : "'$IP'"
         }]
-    }
+     }
     }]
   }'
   
