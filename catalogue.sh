@@ -75,10 +75,10 @@ VALIDATE $? "coping mongo repo file"
 dnf install mongodb-mongosh -y &>>$log_file
 VALIDATE $? "installing mongodb"
 
-Status=$(mongosh --hostmongo mongodb.devops84s.site --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
-if [ $Status -lt 0 ]
+STATUS=$(mongosh --hostmongo mongodb.devops84.site --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
+if [ $STATUS -lt  0 ]
 then
-   mongosh --host mongodb.devops84s.site </app/db/master-data.js &>>$log_file
+   mongosh --host mongodb.devops84.site </app/db/master-data.js &>>$log_file
    VALIDATE $? "loading  data in mongodb"
 else 
    echo -e "already data loaded"
