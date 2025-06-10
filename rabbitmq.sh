@@ -21,7 +21,7 @@ else
     echo "you are running with root user" | tee -a $log_file
 fi
 
-echo "enter the mysql password"
+echo "enter the rabbitmq password"
 read -s Rabbitmq_pasw
 
 VALIDATE(){
